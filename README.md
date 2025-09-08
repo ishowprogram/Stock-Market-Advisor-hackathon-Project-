@@ -61,7 +61,7 @@
 
 ## 📷 Screenshots  
 <p align="center">
-  <img src="https://via.placeholder.com/600x300.png?text=Chat+UI+Screenshot" alt="Chat UI" />
+  <img width="1913" height="871" alt="image" src="https://github.com/user-attachments/assets/0db6cfdb-6041-496f-8643-fa604d3205e2" />
   <br/>
   <i>Chat interface of the AI Stock Advisor</i>
 </p>
