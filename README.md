@@ -65,9 +65,6 @@
 <img width="1184" height="558" alt="image" src="https://github.com/user-attachments/assets/9e0ecd85-0b0e-47a5-a825-5c951c2b0e2d" />
 
   <br/>
-![Uploading image.png…]()
-
-  <i>Chat interface of the AI Stock Advisor</i>
 </p>
 
 ---
