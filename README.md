@@ -1,7 +1,7 @@
 <h1 align="center">📊🤖 AI Stock Advisor with Sensitive Info Logger</h1>
 
 <p align="center">
-  <b>Real-time stock insights 💹 + AI-powered Buy/Hold/Sell advice 🧠 + Sensitive info logging 🔒</b>
+  <b>Real-time stock insights 💹 + AI-powered Buy/Hold/Sell advice 🧠 + Sensitive info logging 🔒 </b>
 </p>
 
 <p align="center">
