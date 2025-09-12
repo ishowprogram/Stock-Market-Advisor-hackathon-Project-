@@ -69,7 +69,7 @@
 
 ---
 
-## 🔧 Setup Instructions  
+## 🔧 Setup Instructions 
 ```bash
 # Clone the repo
 git clone https://github.com/your-username/ai-stock-advisor.git
