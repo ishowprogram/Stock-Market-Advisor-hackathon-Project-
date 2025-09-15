@@ -208,5 +208,3 @@ npm run lint      # Lint the project
   <li>Fork the repo, create a feature branch, and open a PR.</li>
   <li>Run <code>npm run lint</code> and ensure a clean build before submitting.</li>
 </ul>
-
-<p align="center">Made with ❤️ for Indian markets 🇮🇳</p>
