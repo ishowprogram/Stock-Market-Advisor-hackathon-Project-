@@ -97,9 +97,17 @@ const Chatbot: React.FC = () => {
               Get expert insights on NSE & BSE stocks, market trends, and investment strategies
             </p>
           </div>
-          <div className="hidden lg:block text-right">
-            <div className="text-emerald-400 font-bold text-lg">Live</div>
-            <div className="text-gray-300 text-sm">Market Analysis</div>
+          <div className="hidden lg:flex items-center space-x-3 ml-auto">
+            <button
+              onClick={() => setMessages([{ id: '1', message: 'Namaste! 🙏 I\'m your AI advisor for Indian stock markets. Ask me about NSE/BSE stocks, Nifty trends, sectoral analysis, or investment strategies for Indian equities.', isUser: false, timestamp: new Date() }])}
+              className="px-3 py-2 text-xs rounded-lg bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-200"
+            >
+              Clear Chat
+            </button>
+            <div className="text-right">
+              <div className="text-emerald-400 font-bold text-lg">Live</div>
+              <div className="text-gray-300 text-sm">Market Analysis</div>
+            </div>
           </div>
         </div>
       </div>

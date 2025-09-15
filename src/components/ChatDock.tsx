@@ -97,6 +97,16 @@ const ChatDock: React.FC = () => {
     }
   };
 
+  const clearChat = () => {
+    setMessages([{
+      id: 'welcome',
+      message: "Namaste! I'm your AI advisor for Indian stock markets. Ask me about NSE/BSE stocks, Nifty trends, sectoral analysis, or strategies.",
+      isUser: false,
+      timestamp: new Date(),
+    }]);
+    setError(null);
+  };
+
 
   return (
     <div className="fixed right-6 bottom-6 z-50">
@@ -109,23 +119,31 @@ const ChatDock: React.FC = () => {
           <MessageCircle className="w-7 h-7" />
         </button>
       ) : (
-        <div className="w-[360px] h-[520px] bg-gradient-to-b from-gray-900 to-gray-800 border border-gray-700 rounded-2xl shadow-2xl overflow-hidden animate-fade-in">
+        <div className="w-[380px] h-[560px] bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900 border border-gray-700 rounded-2xl shadow-2xl overflow-hidden animate-fade-in">
           {/* Header */}
-          <div className="flex items-center justify-between p-4 bg-gray-800 border-b border-gray-700">
+          <div className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 border-b border-gray-700">
             <div>
               <div className="font-semibold text-white">Stock Market Assistant</div>
-              <div className="text-xs text-gray-300">Powered by n8n AI Workflow</div>
+              <div className="text-xs text-blue-200">Powered by n8n AI Workflow</div>
             </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="p-1 rounded-full hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 text-white"
-              aria-label="Close chat"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={clearChat}
+                className="px-2 py-1 text-xs rounded-lg bg-gray-800 hover:bg-gray-700 border border-gray-700 text-gray-200"
+              >
+                Clear
+              </button>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-1 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 text-white border border-gray-700"
+                aria-label="Close chat"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
           </div>
           
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-gray-800 to-gray-900">
             {messages.map((msg) => {
               const isUser = msg.isUser;
               const isError = msg.status === 'error';
@@ -137,13 +155,13 @@ const ChatDock: React.FC = () => {
                   className={`flex ${isUser ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[85%] rounded-2xl px-4 py-2 relative ${
+                    className={`max-w-[85%] rounded-2xl px-5 py-3 relative shadow-xl border ${
                       isUser
-                        ? 'bg-emerald-500 text-white rounded-br-none'
+                        ? 'bg-gradient-to-br from-blue-600 to-blue-700 text-white border-blue-500 rounded-br-md'
                         : isTyping
-                        ? 'bg-white border border-gray-200 rounded-bl-none w-16'
-                        : 'bg-white border border-gray-200 rounded-bl-none shadow-sm'
-                    } ${isError ? 'border-red-200 bg-red-50' : ''}`}
+                        ? 'bg-gradient-to-br from-gray-700 to-gray-800 text-white border-gray-600 rounded-bl-md w-20'
+                        : 'bg-gradient-to-br from-gray-700 to-gray-800 text-white border-gray-600 rounded-bl-md'
+                    } ${isError ? 'border-red-400 bg-red-900/20' : ''}`}
                   >
                     {isTyping ? (
                       <div className="flex items-center space-x-1 p-2">
@@ -155,17 +173,17 @@ const ChatDock: React.FC = () => {
                       <>
                         <div className="text-sm whitespace-pre-wrap">
                           {isError && msg.error ? (
-                            <div className="text-red-600 text-xs mb-1 flex items-center">
+                            <div className="text-red-400 text-xs mb-1 flex items-center">
                               <AlertCircle className="w-3.5 h-3.5 mr-1 flex-shrink-0" />
                               <span>{msg.error}</span>
                             </div>
                           ) : null}
                           {msg.message}
                         </div>
-                        <div className="text-xs mt-1 opacity-70 flex justify-end items-center">
+                        <div className={`text-xs mt-1 flex justify-end items-center ${isUser ? 'text-blue-100' : 'text-gray-400'}`}>
                           {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                           {isError && (
-                            <span className="ml-1 text-red-500">
+                            <span className="ml-1 text-red-400">
                               <AlertCircle className="inline w-3 h-3" />
                             </span>
                           )}
@@ -178,7 +196,7 @@ const ChatDock: React.FC = () => {
             })}
             {error && (
               <div className="text-center">
-                <div className="inline-flex items-center px-3 py-1 bg-red-50 text-red-600 text-xs rounded-full">
+                <div className="inline-flex items-center px-3 py-1 bg-red-900/30 text-red-300 border border-red-700 text-xs rounded-full">
                   <AlertCircle className="w-3.5 h-3.5 mr-1" />
                   {error}
                 </div>
@@ -187,7 +205,7 @@ const ChatDock: React.FC = () => {
             <div ref={endRef} className="h-4" />
           </div>
           
-          <div className="border-t border-gray-200 p-4 bg-white">
+          <div className="border-t border-gray-700 p-4 bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900">
             <div className="flex items-center space-x-2">
               <input
                 ref={inputRef}
@@ -196,13 +214,13 @@ const ChatDock: React.FC = () => {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={onKeyDown}
                 placeholder="Ask about stocks, market trends..."
-                className="flex-1 px-4 py-2.5 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm transition-all duration-200 disabled:opacity-70"
+                className="flex-1 px-5 py-3 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm transition-all duration-200 disabled:opacity-70 bg-gray-800 text-white placeholder-gray-400"
                 disabled={isTyping}
               />
               <button
                 onClick={sendMessage}
                 disabled={!input.trim() || isTyping}
-                className="p-2.5 rounded-full bg-emerald-500 text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+                className="p-3 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 border border-emerald-700"
                 aria-label="Send message"
               >
                 <Send className="w-5 h-5" />

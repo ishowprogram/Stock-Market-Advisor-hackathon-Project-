@@ -1,5 +1,6 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart, BarChart, Bar } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart, BarChart, Bar } from 'recharts';
+import { BarChart3 } from 'lucide-react';
 import { ChartPoint } from '../utils/api';
 
 interface StockChartProps {
@@ -9,6 +10,16 @@ interface StockChartProps {
 }
 
 const StockChart: React.FC<StockChartProps> = ({ data, isPositive, period }) => {
+  const formatNumber = (num: number) => {
+    if (num >= 10000000) {
+      return `${(num / 10000000).toFixed(1)}Cr`;
+    } else if (num >= 100000) {
+      return `${(num / 100000).toFixed(1)}L`;
+    } else if (num >= 1000) {
+      return `${(num / 1000).toFixed(1)}K`;
+    }
+    return new Intl.NumberFormat('en-IN').format(num);
+  };
   const formatTooltipLabel = (value: string) => {
     const date = new Date(value);
     return date.toLocaleDateString('en-IN', { 
