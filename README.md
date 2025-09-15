@@ -178,7 +178,10 @@ npm run lint      # Lint the project
 <h2>📷 Screenshots</h2>
 <p align="center">
   <!-- Replace with your own screenshots -->
-  <img width="800" alt="Dashboard" src="https://github.com/user-attachments/assets/0db6cfdb-6041-496f-8643-fa604d3205e2" />
+  <img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/64d1aaf6-5de8-4b3a-b563-fd8c348c1afb" />
+  <img width="1917" height="862" alt="image" src="https://github.com/user-attachments/assets/4ceaa425-7de1-42b5-8024-b04b4b4fde2b" />
+  <img width="401" height="580" alt="image" src="https://github.com/user-attachments/assets/b4c9b10d-6eaa-4c53-8bf5-4b5bba6e63a3" />
+
   <br/>
 </p>
 
