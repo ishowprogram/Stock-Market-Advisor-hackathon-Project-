@@ -180,7 +180,6 @@ npm run lint      # Lint the project
   <!-- Replace with your own screenshots -->
   <img width="800" alt="Dashboard" src="https://github.com/user-attachments/assets/0db6cfdb-6041-496f-8643-fa604d3205e2" />
   <br/>
-  <img width="800" alt="Chatbot" src="https://github.com/user-attachments/assets/9e0ecd85-0b0e-47a5-a825-5c951c2b0e2d" />
 </p>
 
 <hr/>
